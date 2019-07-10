@@ -1,0 +1,68 @@
+%% Blank letter for Hochschule Bonn-Rhein-Sieg
+%% Template by Karl N. Kirschner, October 2017
+%%-----------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+\input{hbrs_letter_structure.tex}
+
+%%-----------------------------------------------------------------------------
+%%	User defined information
+%%-----------------------------------------------------------------------------
+%% Who is sending the letter
+\who{First LastName, Ph.D.}
+
+%% The address of person sending the letter
+\letterfrom{
+    Grantham-Allee 20 \\
+    53757 Sankt Augustin \\
+    Tel. +49 2241 ??? \\
+    Fax +49 2241 865 ????  \\
+    first.lastname@h-brs.de \\
+    www.h-brs.de
+    }
+\location{Sankt Augustin}
+
+%% The address to whom the letter is being sent
+\letterto{
+    Beispieladresse \\
+    z.Hd. Frau Elisabeth Exempel \\
+    Demonstrationsplatz 56 \\
+    67890 Musterstadt
+    }
+
+%% Topic of Letter
+\topic{EXAMPLE}
+
+%% Header, right side of the logo
+\leftheaderlineone{Hochschule} %% top header line
+\leftheaderlinetwo{Bonn-Rhein-Sieg} % middle header line
+\leftheaderlinethree{University of Applied Sciences} % bottom header line
+
+%% Header, left side of page
+\rightheaderlineone{Department of Electrical Engineering,} %% top header line
+\rightheaderlinetwo{Mechanical Engineering and Technical Journalism} % middle header line
+\rightheaderlinethree{\who} % bottom header line
+
+\begin{document}
+% \layout{}
+
+\logoheader{fhlogo}
+\vspace{40mm}
+
+\contactinfo
+
+%%-----------------------------------------------------------------------------
+%%	The heart of the letter -- modify this
+%%-----------------------------------------------------------------------------
+%% Beginning of letter here
+Dear Sir or Madam,
+\noindent
+
+%% Content
+
+%% Closing
+~\\
+\flushleft
+Sincerely, \\ \vspace{15mm}
+\who
+\end{document}

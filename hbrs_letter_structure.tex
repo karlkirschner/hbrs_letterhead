@@ -1,0 +1,99 @@
+\usepackage{graphicx} %% Required for including pictures
+
+\usepackage[utf8]{inputenc} %% Required for inputting international characters
+\pagestyle{empty} %% Suppress headers and footers
+\usepackage{microtype} %% Improves typography
+\renewcommand{\familydefault}{\rmdefault}
+
+\usepackage{geometry}
+\geometry{left=26mm, right=16mm, top=10mm}
+\textheight=270mm
+
+\setlength\parindent{10mm} % Paragraph indentation
+
+%%-----------------------------------------------------------------------------
+%% Layout - to check overall format of the letter
+%%-----------------------------------------------------------------------------
+\usepackage{layout}
+%% default to mm instead of pt for layout command
+\makeatletter
+\renewcommand*{\lay@value}[2]{%
+  \strip@pt\dimexpr0.351459\dimexpr\csname#2\endcsname\relax\relax mm%
+}
+\makeatother
+
+%%-----------------------------------------------------------------------------
+%%	DEFINE CUSTOM COMMANDS
+%%-----------------------------------------------------------------------------
+\newcommand{\who}[1]{\renewcommand{\who}{#1}}
+\newcommand{\topic}[1]{\renewcommand{\topic}{#1}}
+\newcommand{\location}[1]{\renewcommand{\location}{#1}}
+
+\newcommand{\leftheaderlineone}[1]{\renewcommand{\leftheaderlineone}{#1}}
+\newcommand{\leftheaderlinetwo}[1]{\renewcommand{\leftheaderlinetwo}{#1}}
+\newcommand{\leftheaderlinethree}[1]{\renewcommand{\leftheaderlinethree}{#1}}
+
+\newcommand{\rightheaderlineone}[1]{\renewcommand{\rightheaderlineone}{#1}}
+\newcommand{\rightheaderlinetwo}[1]{\renewcommand{\rightheaderlinetwo}{#1}}
+\newcommand{\rightheaderlinethree}[1]{\renewcommand{\rightheaderlinethree}{#1}}
+
+\newcommand{\letterfrom}[1]{\renewcommand{\letterfrom}{#1}}
+\newcommand{\letterto}[1]{\renewcommand{\letterto}{#1}}
+
+%%-----------------------------------------------------------------------------
+%%	DEFINE CUSTOM HEADER
+%%-----------------------------------------------------------------------------
+\newcommand{\logoheader}[1]{%
+  \noindent
+  \begin{minipage}[t]{30mm}
+      \flushleft
+      \includegraphics[width=25mm]{#1}
+  \end{minipage}
+  \begin{minipage}[t]{50mm}
+      \vspace{-15mm}
+      \noindent
+      \flushleft
+      \small{\sffamily
+      \textbf{\leftheaderlineone} \\
+      \textbf{\leftheaderlinetwo} \\
+      \leftheaderlinethree} % \itshape 
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{80mm}
+      \vspace{-15mm}
+      \noindent
+      \flushleft
+      \small{\sffamily
+      \rightheaderlineone \\
+      \rightheaderlinetwo \\
+      \rightheaderlinethree}
+  \end{minipage}}
+
+\newcommand{\contactinfo}[1]{%
+  \noindent
+  \begin{minipage}[t]{85mm}
+      \flushleft
+      \footnotesize{\sffamily Hochschule Bonn-Rhein-Sieg, 53754 Sankt Augustin} \\
+      \normalsize
+      \vspace{13mm}
+      \letterto
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{80mm}
+      \footnotesize{\sffamily
+      \letterfrom
+      }
+  \end{minipage}
+  
+  \normalsize
+  \vspace{5mm}
+  \noindent
+  \newline
+  \location, \today
+  \newline
+  ~\\
+  \noindent
+  \textbf{\topic}
+  ~\\
+  ~\\
+  \noindent}
